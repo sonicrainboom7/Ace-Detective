@@ -12,7 +12,7 @@ public class bottle : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D c){
 		this.triggerBottle = true;
-		Debug.Log (c);
+		//Debug.Log (c);
 		Character character = c.gameObject.GetComponent <Character> ();
 		character.addItem (gameObject.name);
 

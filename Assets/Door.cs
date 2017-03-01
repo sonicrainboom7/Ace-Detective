@@ -5,23 +5,19 @@ using UnityEngine;
 public class Door : MonoBehaviour {
 
 	PointerController action;
-	bool triggerCheck = false; 
+	bool TriggerCheck = false;
+
 
 	void Start (){
 		action = GameObject.Find ("Action").GetComponent<PointerController> ();
 	}
 	void OnTriggerEnter2D(Collider2D c){
-		this.triggerCheck = true;
-		Debug.Log (c);
-		Character character = c.gameObject.GetComponent <Character> ();
-		character.addItem (gameObject.name);
-
+		this.TriggerCheck = true;
+	}
+	void OnTriggerExit2D(Collider2D c){
+		this.TriggerCheck = false;
 	}
 	public bool GettriggerCheck() {
-		return this.triggerCheck;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+		return this.TriggerCheck;
 	}
 }
